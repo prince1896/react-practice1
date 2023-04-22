@@ -26,9 +26,8 @@ export default function TextForm(props) {
     setText(event.target.value)
    }
    const handleCopy=()=>{
-   let text= document.getElementById('myBox');
-    text.select();
-    navigator.clipboard.writeText(text.value);
+   
+    navigator.clipboard.writeText(text);
     props.showAlert("Copied!","success");
    }
    const handleExtraSpaces=()=>{
@@ -40,25 +39,25 @@ export default function TextForm(props) {
   return (
     <>
        <div className='container' style={{color:props.mode==='dark'?'white':'black'}} >
-      <h1>{props.heading}</h1>
+      <h1 className='mb-3'>{props.heading}</h1>
      <div className="mb-3">
-  <textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleOnchange} style={{backgroundColor:props.mode==='dark'?'grey':'white',
+  <textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleOnchange} style={{backgroundColor:props.mode==='dark'?'#8e8b8b':'white',
 color:props.mode==='dark'?'white':'black'}}></textarea>
 </div>
-<button type="button" className="btn btn-primary mx-1" onClick={handleUpCase}>Convert to UpperCase</button>
-<button type="button" className="btn btn-secondary mx-1" onClick={handleLoCase}>Convert to LowerCase</button>
-<button type="button" className="btn btn-success mx-1" onClick={handleCapitalize}>Capitalize</button>
-<button type="button" className="btn btn-danger mx-1" onClick={handleClear}>Clear</button> 
-<button type="button" className="btn btn-danger mx-1" onClick={handleCopy}>CopyText</button> 
-<button type="button" className="btn btn-danger mx-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button> 
+<button type="button" disabled={text.length===0} className="btn btn-primary mx-1 " onClick={handleUpCase}>Convert to UpperCase</button>
+<button type="button" disabled={text.length===0} className="btn btn-secondary mx-1" onClick={handleLoCase}>Convert to LowerCase</button>
+<button type="button" disabled={text.length===0} className="btn btn-success mx-1" onClick={handleCapitalize}>Capitalize</button>
+<button type="button" disabled={text.length===0} className="btn btn-danger mx-1" onClick={handleClear}>Clear</button> 
+<button type="button" disabled={text.length===0} className="btn btn-danger mx-1" onClick={handleCopy}>CopyText</button> 
+<button type="button" disabled={text.length===0} className="btn btn-danger mx-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button> 
     </div>
 
     <div className="container" style={{color:props.mode==='dark'?'white':'black'}}>
       <h2>Your text Summary</h2>
-      <p>{text.split(' ').length} Words and {text.length} Character</p>
-      <p>{0.008*text.split(' ').length} Minutes Read</p>
+      <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Words and {text.length} Character</p>
+      <p>{0.008*text.split(' ').filter((element)=>{return element.length!==0}).length} Minutes Read</p>
       <h2>Preview</h2>
-      <p>{text.length>0?text:'Enter Something to Analyze'}</p>
+      <p>{text.length>0?text:'Nothing to Preview !'}</p>
     </div>
     </>
  

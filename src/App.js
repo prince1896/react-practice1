@@ -8,8 +8,8 @@ import React, { useState } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
+  
 } from "react-router-dom";
 
 
@@ -58,10 +58,10 @@ function App() {
 <div className="container">
 <Switch>
           <Route path="/about">
-            <About />
+            <About mode={mode}/>
           </Route>
           <Route path="/">
-          <TextForm heading='Enter the Text to Analyze' showAlert={showAlert}  mode={mode}/>
+          <TextForm heading="Try TextUtils -word counter, character counter,remove extra spaces" showAlert={showAlert}  mode={mode}/>
           </Route>
         </Switch>
   
