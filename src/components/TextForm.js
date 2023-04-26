@@ -45,11 +45,11 @@ export default function TextForm(props) {
 color:props.mode==='dark'?'white':'black'}}></textarea>
 </div>
 <button type="button" disabled={text.length===0} className="btn btn-primary mx-1  my-1 " onClick={handleUpCase}>Convert to UpperCase</button>
-<button type="button" disabled={text.length===0} className="btn btn-secondary mx-1 my-1" onClick={handleLoCase}>Convert to LowerCase</button>
-<button type="button" disabled={text.length===0} className="btn btn-success mx-1 my-1" onClick={handleCapitalize}>Capitalize</button>
-<button type="button" disabled={text.length===0} className="btn btn-danger mx-1 my-1" onClick={handleClear}>Clear</button> 
-<button type="button" disabled={text.length===0} className="btn btn-danger mx-1 my-1" onClick={handleCopy}>CopyText</button> 
-<button type="button" disabled={text.length===0} className="btn btn-danger mx-1 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button> 
+<button type="button" disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLoCase}>Convert to LowerCase</button>
+<button type="button" disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCapitalize}>Capitalize</button>
+<button type="button" disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleClear}>Clear</button> 
+<button type="button" disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCopy}>CopyText</button> 
+<button type="button" disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button> 
     </div>
 
     <div className="container" style={{color:props.mode==='dark'?'white':'black'}}>
