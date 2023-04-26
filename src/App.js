@@ -14,7 +14,7 @@ import {
 
 
 function App() {
-  const [mode,setMode]= useState('light')
+  const [mode,setMode]= useState("light")
   const [btn,setBtn]=useState('Enable Dark mode')
   const [alert,setAlert]=useState(null);
 

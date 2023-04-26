@@ -8,7 +8,7 @@ export default function Navbar(props) {
       <nav className={`navbar navbar-expand-lg bg-body-tertiary navbar-${props.mode} bg-${props.mode}`}>
   <div className="container-fluid">
     <Link className="navbar-brand" to="/">{props.title}</Link>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -19,10 +19,7 @@ export default function Navbar(props) {
         
 
       </ul>
-      <form className="d-flex" role="search">
-        <input className="form-control me-2 mx-1" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-success" type="submit">Search</button>
-      </form>
+      
       <div className={`custom-control custom-switch mx-2 text-${props.mode==='dark'?'light':'dark'}`}>
   <input type="checkbox" className="custom-control-input" id="customSwitch1" onClick={props.toggleMode}/>
   <label className="custom-control-label" htmlFor="customSwitch1">{props.btn}</label>
